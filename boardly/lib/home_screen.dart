@@ -25,7 +25,8 @@ class HomeScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => ProjectListScreen(
-                                  title: "hello", tasks: ["tasjs", "shbsjd"])));
+                                  title: "Due Today",
+                                  tasks: ["duetoday1", "duetoday2"])));
                     },
                     child: ProjectCard(
                       title: 'Due Today',
@@ -42,7 +43,12 @@ class HomeScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => ProjectListScreen(
-                                  title: "hello", tasks: ["tasjs", "shbsjd"])));
+                                      title: "OverDue",
+                                      tasks: [
+                                        "overdue1",
+                                        "overdue2",
+                                        "overdue3"
+                                      ])));
                     },
                     child: ProjectCard(
                       title: 'Overdue',
@@ -64,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => ProjectListScreen(
                               title: "To be Completed",
-                              tasks: ["tasjs", "shbsjd"])));
+                              tasks: ["tobe2", "tobe2", "tobe3", "tobe4"])));
                 },
                 child: ProjectCard(
                   title: 'Projects to be Completed',

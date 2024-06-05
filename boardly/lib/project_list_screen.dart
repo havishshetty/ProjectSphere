@@ -23,7 +23,8 @@ class ProjectListScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => ProjectDetail(
-                          projectname: title, description: "hidididi")));
+                          projectname: tasks[index],
+                          description: title + " description.")));
             },
             child: ListTile(
               title: Card(
