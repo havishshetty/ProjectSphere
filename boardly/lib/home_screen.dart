@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:boardly/project_list_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final int dueTodayCount = 3;
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Boardly'),
+        title: Text('Project Sphere'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -18,18 +19,36 @@ class HomeScreen extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: ProjectCard(
-                    title: 'Due Today',
-                    projectCount: dueTodayCount,
-                    cardColor: Colors.green,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProjectListScreen(
+                                  title: "hello", tasks: ["tasjs", "shbsjd"])));
+                    },
+                    child: ProjectCard(
+                      title: 'Due Today',
+                      projectCount: dueTodayCount,
+                      cardColor: Colors.green,
+                    ),
                   ),
                 ),
                 SizedBox(width: 10),
                 Expanded(
-                  child: ProjectCard(
-                    title: 'Overdue',
-                    projectCount: overdueCount,
-                    cardColor: Colors.red,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProjectListScreen(
+                                  title: "hello", tasks: ["tasjs", "shbsjd"])));
+                    },
+                    child: ProjectCard(
+                      title: 'Overdue',
+                      projectCount: overdueCount,
+                      cardColor: Colors.red,
+                    ),
                   ),
                 ),
                 SizedBox(width: 10),
@@ -38,10 +57,20 @@ class HomeScreen extends StatelessWidget {
             Container(
               width: 400,
               height: 150,
-              child: ProjectCard(
-                title: 'Projects to be Completed',
-                projectCount: toBeCompletedCount,
-                cardColor: Colors.orange,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProjectListScreen(
+                              title: "To be Completed",
+                              tasks: ["tasjs", "shbsjd"])));
+                },
+                child: ProjectCard(
+                  title: 'Projects to be Completed',
+                  projectCount: toBeCompletedCount,
+                  cardColor: Colors.orange,
+                ),
               ),
             ),
           ],
